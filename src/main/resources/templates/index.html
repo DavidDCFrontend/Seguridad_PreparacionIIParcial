@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+
+    <a sec:authorize="hasRole('manager')" th:href="@{/admin/}">Admin</a>
+    <a sec:authorize="hasRole('supervisor') or hasRole('manager')" th:href="@{/basic/rrhh}">RR.HH</a>
+	<a sec:authorize="hasRole('supervisor') or hasRole('manager')" th:href="@{/basic/almacen}">Almacen</a>
+	<a sec:authorize="hasRole('comercial') or hasRole('manager')" th:href="@{/basic/marketing}">Marketing</a>
+    <form th:action="@{/logout}" method="POST" id="logoutForm">
+		<a href="#" onclick="document.getElementById('logoutForm').submit();">Cerrar</a>
+	</form>
+	
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="../css/seccion.css">
+</head>
+<body>
+    <p>Administrador</p>
+    
+    <form class="F1" method="post" th:action="@{/admin/newuser}">
+           <div><p style="font-size: 40px;color:white;">Nuevo Usuario</p></div>
+           <div><label>Usuario: </label><input type="text" name="user" autocomplete="off" /></div>
+           <div><label>Password: </label><input type="password" name="pass" /></div>
+           <div><input type="submit" value="Crear"/></div>
+           <div><p style="font-size: 16px; color: red;" th:if="${param.errorcreated}">Ha ocurrido un error.</p>
+                <p style="font-size: 16px; color: green;" th:if="${param.created}">Usuario creado correctamente.</p>
+           </div>
+    </form>
+</body>
+</html>
